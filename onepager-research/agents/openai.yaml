@@ -1,0 +1,4 @@
+interface:
+  display_name: "One Pager Research"
+  short_description: "Create evidence-backed product one-pagers"
+  default_prompt: "Create a concise, evidence-backed one-pager covering market, users, competitors, product, and technology."
