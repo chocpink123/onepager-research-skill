@@ -15,6 +15,8 @@ Create a concise, decision-oriented one-pager from an open product brief. The de
 - Remove repetition and AI-sounding contrast lines. Use product-manager language: observable user problem, product behavior, expected value, evidence, and decision.
 - Separate fact, inference, and proposal. Label assumptions or weak evidence instead of presenting them as facts.
 - Keep the page skimmable. Use prose for reasoning, tables only for true comparisons, cards for independent concepts, and flows for sequential experiences.
+- Do not turn an unverified limitation into a headline claim. If evidence is incomplete, either omit the claim or state the limitation in a source note or research log rather than making the one-pager negative.
+- When the user gives corrective feedback, treat it as a content constraint: preserve the intended product advantage, but do not add unsupported market-leader, retention, willingness-to-pay, or competitor-deficiency claims.
 
 ## Workflow
 
@@ -37,7 +39,7 @@ Default executive order:
 2. Market opportunity and launch market comparison.
 3. Core user profile and concrete pain points.
 4. Reference competitors, using official positioning and observable features.
-5. Market gap, placed immediately below the competitor list when the page is about competitive entry.
+5. Core feature comparison, followed immediately by a short market-opportunity quote when the page is about competitive entry.
 6. Differentiation and core experience loop as one section.
 7. Technology and platform dependencies.
 8. Appendix only when requested; keep it collapsed by default in HTML.
@@ -55,9 +57,11 @@ Use web research for unstable, niche, or requested data. Prefer primary or high-
 
 For every important number capture: geography, category definition, period, unit, growth basis, source, and confidence. Do not mix retail sales, GMV, revenue, app downloads, users, impressions, CPM, and CAC as if they were interchangeable.
 
-For launch-market tables, use the same dimensions for every country. A useful comparison usually includes population and purchasing power, social distribution, skincare demand, promotion cost, competitive context, and product validation value. If a metric is unavailable, write “not found in comparable public data” rather than filling the cell with an unrelated metric.
+For launch-market tables, use the same dimensions for every country. A useful comparison usually includes population and purchasing power, social distribution, skincare demand, promotion cost, competitive context, and product validation value. Do not add a “launch objective” row merely to repeat a product strategy; use it only when there is a meaningful comparison. If a metric is unavailable, write “not found in comparable public data” rather than filling the cell with an unrelated metric.
 
-For competitors, use complete official product names and preserve screenshots with portable embedded assets. Summarize each competitor in the same pattern: official positioning, core functions, evidence of activity, and the gap Lumi can enter.
+For creator pricing, always specify the follower tier, platform, content format, geography, source year, and whether the number is a rate card, survey median, package price, or CPM benchmark. Keep Indonesia and Brazil on the same comparison dimensions. Convert local currency to USD only with an as-of date and an exchange-rate source; show approximate USD values in the one-pager and keep the original local-currency source link in the sources line. Do not use a country-level all-platform median as if it were a quote for a 10K or 100K creator.
+
+For competitors, use complete official product names and preserve screenshots with portable embedded assets. Summarize each competitor in the same pattern: official positioning, core functions, evidence of activity, and the product opportunity Lumi can pursue. Acknowledge capabilities that competitors already have, such as memory or routine support, instead of claiming they are absent. Prefer opportunity language such as “connect these capabilities through proactive skin-condition follow-up and dynamic adjustment.” Avoid vague phrases such as “proactive companionship”; use the precise product behavior.
 
 ### 4. Convert research into product logic
 
@@ -71,7 +75,7 @@ Translate user pain into product behavior:
 | Skin status changes and the user has no next step | Buddy proactively asks, explains the reason, and gives a prioritized adjustment |
 | One-off advice is saved and forgotten | persistent memory and follow-up tied to the plan cycle |
 
-Write differentiation as concrete functionality plus user value. Avoid abstract claims such as “more intelligent” or “more human.” Prefer titles like “持续记忆与阶段追踪” or “测肤结果直接生成可执行方案,” followed by what the user can do and what improves for them.
+Write differentiation as concrete functionality plus user value. Avoid abstract claims such as “more intelligent” or “more human.” Prefer titles like “持续记忆与阶段追踪” or “测肤结果直接生成可执行方案,” followed by what the user can do and what improves for them. For AI Buddy products, separate the behaviors: conversational onboarding, AI skin analysis, routine continuity, proactive skin-condition follow-up, dynamic adjustment, and persona / image / interaction design.
 
 The core loop should show state flow, not marketing copy. Typical pattern:
 
@@ -106,8 +110,22 @@ For a Feishu-ready one-pager, prefer a single self-contained, vertically scrolli
 - restrained black, white, gray, and yellow palette; light form, heavy content;
 - no slide-like horizontal canvas, oversized hero, or decorative UI that competes with the analysis;
 - source links adjacent to claims or in a compact source line;
+- put data-source URLs on their own source line or block, not directly after a number inside a table cell; for competitor activity, keep Sensor Tower or app-intelligence links in a dedicated source line where possible;
 - tables horizontally scrollable on mobile and readable on desktop;
 - appendix hidden or collapsed unless the user asks for it to be visible.
+
+Recommended display logic for a research-heavy one-pager:
+
+1. Product proposition and value.
+2. Market opportunity and comparable launch-market table.
+3. User profile and pain points.
+4. Competitor list and public activity evidence.
+5. Core feature comparison.
+6. One short opportunity quote directly below the feature comparison.
+7. Differentiation and the end-to-end experience loop.
+8. Technology dependencies, fallback plan, safety and optional integrations.
+
+For bilingual pages, Chinese and English must carry the same claims, caveats, units, dates, source labels, table dimensions, and feature headers. Test the language toggle after every content change; do not update only the visible default language.
 
 Keep HTML text and translation keys synchronized. After editing, validate the inline script with `node --check`, search for missing local asset paths, verify that required sections appear once, and inspect the rendered page at desktop and mobile widths when possible.
 

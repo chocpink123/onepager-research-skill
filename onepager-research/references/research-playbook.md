@@ -17,6 +17,18 @@ URL:
 Confidence: high / medium / low
 ```
 
+For creator or media pricing, extend the record with:
+
+```text
+Follower tier:
+Platform:
+Content format:
+Rate type: rate card / survey median / package / CPM benchmark
+Source year:
+Original currency:
+USD conversion date and source:
+```
+
 Do not write a number into the one-pager until its category and period are clear. “Beauty market,” “skincare market,” “retail sales,” “GMV,” “downloads,” “users,” “reach,” “CPM,” and “CAC” must remain distinct.
 
 ## Source hierarchy
@@ -50,7 +62,9 @@ Every country row should use comparable columns. A compact executive table can u
 - creator fee or CPM, clearly labeled as a media benchmark rather than CAC;
 - competitor coverage and Lumi's product-validation value.
 
-When one country has a metric that another does not, either find the same metric for both or remove it from the comparison. Put nuanced conclusions in “product validation value,” not in a separate analysis column, unless the user explicitly requests a decision column.
+When one country has a metric that another does not, either find the same metric for both or remove it from the comparison. Put nuanced conclusions in “product validation value,” not in a separate analysis column, unless the user explicitly requests a decision column. Do not include a “launch objective” row just to restate a product strategy when there is no comparative evidence.
+
+For creator-cost rows, use the same follower tier and format in every country. A good row might compare 10K–50K followers across Instagram feed, Instagram Reel / video, and TikTok video. If one country has only a dated or lower-confidence benchmark, show the year and confidence note rather than silently blending it with newer data. Convert all displayed values to USD using a dated exchange rate, while linking the original local-currency source.
 
 ## Competitor evidence
 
@@ -78,3 +92,16 @@ High skincare-content activity and large social-commerce reach → users discove
 ```
 
 Do not overstate causality. A low CPM does not prove low CAC; high downloads do not prove retention; a large skincare market does not prove willingness to pay for a new app.
+
+## Reference implementation logic
+
+For a long-form HTML one-pager, the comparison section should read in this order:
+
+1. competitor list with official positioning and activity evidence;
+2. feature comparison table using stable, explicit headers;
+3. a short quoted opportunity statement immediately below the table;
+4. differentiation that explains how the proposed product connects validated capabilities into a more continuous experience.
+
+Keep source links visible but visually subordinate. Use a separate source line for Sensor Tower, app-store, creator-rate, market, and audience sources. Do not hide source URLs only in code or attach them ambiguously to a number.
+
+When competitors already offer memory, routines, or check-ins, state the opportunity as a connection problem: reduce generic product and ingredient exploration burden, then connect skin analysis, routine execution, proactive skin-condition follow-up, and dynamic adjustment. Do not claim the individual capabilities are missing unless the source explicitly supports that claim.
